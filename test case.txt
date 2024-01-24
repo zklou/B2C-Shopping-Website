@@ -1,0 +1,40 @@
+curl -i -X PUT -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Type: application/json' -H 'User-Agent: python-requests/2.28.1' -d '{"username": "test", "email": "test@company.com", "password": "password", "firstName": "Te", "lastname": "St"}' http://127.0.0.1:8080/user
+
+curl -i -X POST -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Type: application/json' -H 'User-Agent: python-requests/2.28.1' -d '{"username": "test", "password": "password"}' http://127.0.0.1:8080/session
+
+curl -i -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Cookie: Session=aa2d8f2a-439b-4280-af39-2e84889c9d03' -H 'User-Agent: python-requests/2.28.1' http://127.0.0.1:8080/categories
+
+curl -i -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'User-Agent: python-requests/2.28.1' http://127.0.0.1:8080/products/type/3
+
+curl -i -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'User-Agent: python-requests/2.28.1' http://127.0.0.1:8080/products/brand/15
+
+curl -i -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'User-Agent: python-requests/2.28.1' http://127.0.0.1:8080/products
+
+curl -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'User-Agent: python-requests/2.28.1' http://127.0.0.1:8080/product/10
+
+curl -X PUT -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Type: application/json' -H 'Cookie: Session=aa2d8f2a-439b-4280-af39-2e84889c9d03' -H 'User-Agent: python-requests/2.28.1' -d '{"product_id": 9}' http://127.0.0.1:8080/cart
+
+curl -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Cookie: Session=aa2d8f2a-439b-4280-af39-2e84889c9d03' -H 'User-Agent: python-requests/2.28.1' http://127.0.0.1:8080/cart
+
+curl -X DELETE -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Cookie: Session=aa2d8f2a-439b-4280-af39-2e84889c9d03' -H 'User-Agent: python-requests/2.28.1' http://127.0.0.1:8080/cart/9
+
+curl -X POST -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Type: application/json' -H 'Cookie: Session=aa2d8f2a-439b-4280-af39-2e84889c9d03' -H 'User-Agent: python-requests/2.28.1' -d '{"credit_card_number": "3569288672935846", "cvc": "791", "expiration_time": "09/33", "address": "5743 Manley Avenue", "products": [9]}' http://127.0.0.1:8080/check_out
+
+curl -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Cookie: Session=aa2d8f2a-439b-4280-af39-2e84889c9d03' -H 'User-Agent: python-requests/2.28.1' http://127.0.0.1:8080/orders
+
+curl -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Cookie: Session=aa2d8f2a-439b-4280-af39-2e84889c9d03' -H 'User-Agent: python-requests/2.28.1' http://127.0.0.1:8080/product_list/6
+
+curl -X PUT -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Type: application/json' -H 'Cookie: Session=aa2d8f2a-439b-4280-af39-2e84889c9d03' -H 'User-Agent: python-requests/2.28.1' -d '{"rating": 1, "content": "poor quality."}' http://127.0.0.1:8080/product/3/review
+
+curl -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Cookie: Session=aa2d8f2a-439b-4280-af39-2e84889c9d03' -H 'User-Agent: python-requests/2.28.1' http://127.0.0.1:8080/product/3/review
+
+curl -X DELETE -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Cookie: Session=aa2d8f2a-439b-4280-af39-2e84889c9d03' -H 'User-Agent: python-requests/2.28.1' http://127.0.0.1:8080/session
+
+curl -i -X POST -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Type: application/json' -H 'User-Agent: python-requests/2.28.1' -d '{"username": "sa", "password": "123456"}' http://127.0.0.1:8080/session
+
+curl -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Type: application/json' -H 'Cookie: Session=b6a10500-1ad0-4f98-80a8-6722e645bd09' -H 'User-Agent: python-requests/2.28.1' -d '{"rating": 1, "content": "poor quality."}' http://127.0.0.1:8080/admin/sales_report/2022/12
+
+curl -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Type: application/json' -H 'Cookie: Session=b6a10500-1ad0-4f98-80a8-6722e645bd09' -H 'User-Agent: python-requests/2.28.1' -d '{"rating": 1, "content": "poor quality."}' http://127.0.0.1:8080/admin/access_report/2022/12
+
+
+

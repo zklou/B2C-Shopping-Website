@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>My test page</title>
+  </head>
+  <body>
+    <a onmouseenter="on_mouse_enter(this)" onmouseleave="on_mouse_leave()" image_binding="https://tuapi.eees.cc/dongman/pc/TUAPI-EEES-CC-1944901551.jpg" href="/">!!!!!!!!!!!!!!!!!!!!!</a>
+    <div id="float_image"><img src=""></div>
+  <script>
+    let current_display = ''
+    let float_div = null
+
+    function on_mouse_enter(o) {
+        console.error('on_mouse_enter')
+        current_display = o.getAttribute('image_binding')
+        float_div.style.display = 'block'
+        float_div.innerHTML = '<img style="max-width: 480px;" src="' + current_display + '">'
+    }
+
+    function on_mouse_leave() {
+        console.error('on_mouse_leave')
+        document.getElementById('float_image').style.display = 'None'
+    }
+
+    document.addEventListener('mousemove', (event) => {
+        if(float_div == null) {
+            float_div = document.getElementById('float_image')
+        }
+        float_div.style.position = 'absolute'
+        float_div.style.left = event.clientX + 10 + 'px'
+        float_div.style.top = event.clientY + 10 + 'px'
+    })
+
+  </script>
+  </body>
+</html>
